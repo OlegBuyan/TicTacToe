@@ -17,12 +17,10 @@ export const useInformarion = () => {
   ];
   const drawSymbol = (i) => {
     let arr = [...field];
-    setResult(`Ходит ${currentPlayer === "X" ? `O` : `X`}`);
     if (arr[i] === "") {
       arr[i] = currentPlayer;
       currentPlayer === "X" ? SetCurrentPlayer("O") : SetCurrentPlayer("X");
-    } else {
-      arr[i] = arr[i];
+      setResult(`Ходит ${currentPlayer === "X" ? `O` : `X`}`);
     }
     setField(arr);
     return getGameResult(arr, i);
